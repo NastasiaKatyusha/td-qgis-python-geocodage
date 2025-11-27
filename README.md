@@ -1,11 +1,12 @@
 # td-qgis-python-geocodage
 
-TD : “Géocoder & analyser les distances aux stations de métro/tram avec QGIS + Python”
-🎯 Objectifs du TD
+## TD : “Géocoder & analyser les distances aux stations de métro/tram avec QGIS + Python”
+
+## 🎯 Objectifs du TD
 
 À l’issue du TD, vous saurez :
 
-Créer une table attributaire dans QGIS depuis Python
+### - Créer une table attributaire dans QGIS depuis Python
 
 Géocoder des adresses avec QBANO / BAN
 
