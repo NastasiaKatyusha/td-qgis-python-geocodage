@@ -30,6 +30,7 @@
 Menu : Plugins → Python Console
 #### → Dans l’onglet Éditeur (grande zone blanche en bas), collez puis exécutez :
 
+```python
 from qgis.core import QgsVectorLayer, QgsField, QgsFields, QgsFeature, QgsProject
 from PyQt5.QtCore import QVariant
 
@@ -45,13 +46,15 @@ pr.addAttributes(fields)
 layer.updateFields()
 
 QgsProject.instance().addMapLayer(layer)
-
+```
 
 Vous obtenez une table attributaire vide appelée etablissements.
 
 ## 2️⃣ Ajouter les établissements
 
 ### Dans l’éditeur Python, collez :
+
+```python
 
 etabs = [
     {"nom": "Lycée Thiers", "adresse": "5 pl Lycée", "cp": "13001", "ville": "Marseille"},
@@ -74,6 +77,7 @@ pr.addFeatures(features)
 layer.updateFields()
 layer.updateExtents()
 
+```
 
  ### La table contient maintenant 4 établissements, mais sans géométrie (normal).
 
@@ -122,7 +126,7 @@ Vous obtenez une couche géocodée, avec des points sur la carte.
 ## 5️⃣ Script Python : trouver l’arrêt le plus proche
 
 ### Dans la console Python → onglet Éditeur, collez :
-
+```python
 from qgis.core import (
     QgsProject,
     QgsSpatialIndex,
@@ -176,6 +180,7 @@ with edit(etab_layer):
         etab_layer.changeAttributeValue(feat.id(), idx_lt_200m, 1 if dist < 200 else 0)
 
 print("Terminé !")
+```
 
 ### La couche etab_3395 est maintenant enrichie automatiquement avec :
 
